@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compose Post</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
+    <link rel="stylesheet" href="medai.css">
+    <link rel="stylesheet" href="slick-master/slick/slick.css">
+    <link rel="stylesheet" href="slick-master/slick/slick-theme.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="/elements.js"></script>
+
+
+
+    <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
+        rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <nav class="navigation">
+        <div class="left-nav">
+            <div id="logo-span"><img src="https://cdn.pixabay.com/photo/2016/09/16/19/04/pen-1674847_1280.png" alt="">
+            </div>
+            <span id="site-title">The Pen Post</span>
+            <span><a href="" class="animated-ul menu1">About</a></span>
+            <span><a href="" class="animated-ul menu1">Links</a></span>
+            <span><a href="" class="animated-ul menu1">Contact</a></span>
+            <span><a href="" class="animated-ul menu1">Blog</a></span>
+        </div>
+        <div class="center-nav">
+            <span id="down-arrow" onclick="revealmenu(event)"><i class="fa fa-caret-down "></i></span>
+        </div>
+        <div class="right-nav">
+            <input class="search-box" type="text" placeholder="Search">
+            <button class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+    </nav>
+    <!--down menu-->
+    <div id="down-menu">
+        <span><a href="">About</a></span>
+        <span><a href="">Contact</a></span>
+        <span><a href="">Links</a></span>
+        <span><a href="">Blog</a></span>
+        <span class="closing-label" onclick="closemenu()"><i class="fa fa-times"> Close</i></span>
+    </div>
+
+
+    <!--Content Editable-->
+
+    <h1 class="heading">Give your post a ncie Title</h1>
+    <input id="Post-Title" class="simple-input-text" type="text"
+        placeholder="Use long tail keywords for better post views">
+        <hr width="80%" color="#11cb6">
+    <h2 class="heading" style="font-size: 25px; margin: 0px 10%;">Select Tags</h2>
+
+    <span style="margin-left: 10%; font-size: 10px; color:#bdbdbd;">separate tags with commas '<b>,</b>'
+    </span>
+    <input id="tag-input" type="text">
+    <div class="cms">
+        <div class="icon-bar">
+
+            <button class="btn-s" onclick="undo()"><i class="fa fa-rotate-left"></i></button>
+            <button class="btn-s" onclick="redo()"><i class="fa fa-rotate-right"></i></button>
+            <button class="btn-s" onclick="addh1()"><i class="fa-solid fa-h"><span></span></i></button>
+            <button class="btn-s" onclick="addh2()"></strong><i class="fa-solid fa-s"></i></button>
+            <button class="btn-s" onclick="HLbold()"><i class="fa fa-bold"></i></button>
+            <button class="btn-s" onclick="HLitalic()"><i class="fa fa-italic"></i></button>
+            <button class="btn-s" onclick="HLunderline()"><i class="fa fa-underline"></i></button>
+            <button class="btn-s" onclick="HLcraetelink()"><i class="fa fa-link"></i></button>
+            <button class="btn-s" onclick="unlink()"><i class="fa fa-unlink"></i></button>
+            <button class="btn-s" onclick="leftAlign()"><i class="fa fa-align-left"></i></button>
+            <button class="btn-s" onclick="centerAlign()"><i class="fa fa-align-center"></i></button>
+            <button class="btn-s" onclick="rightAlign()"><i class="fa fa-align-right"></i></button>
+            <button class="btn-s" onclick="justify()"><i class="fa fa-align-justify"></i></button>
+
+
+            <button class="btn-s" style="position:relative;" onclick="imagebox()"><i class="fa fa-image"></i></button>
+            <div class="floating-box">
+                <i class="fa fa-close" onclick="clse()"></i>
+                <span>Enter Url:</span>
+                <input id="ImageUrlSource" class="simple-input-text" type="url">
+                <span style="display:block; text-align: center; color: rgb(113, 113, 113);">or</span>
+                <label>Uplaod File</label>
+                <input id="file-upload" type="file">
+                <button class="rect-frame" onclick="passimage()"><i class="fa fa-cloud-upload"></i></button>
+
+            </div>
+            <button class="btn-s" onclick="addul()"><i class="fa fa-list-ul"></i></button>
+            <button class="btn-s" onclick="addol()"><i class="fa fa-list-ol"></i></button>
+            <button class="btn-s" onclick="subscript()"><i class="fa fa-subscript"></i></button>
+            <button class="btn-s" onclick="superscript()"><i class="fa fa-superscript"></i></button>
+
+            <span class="icon-label">Font-size</span>
+            <select id="font-ctrl">size of font:
+                <option onclick="size(4)">4</option>
+                <option onclick="size(8)">8</option>
+                <option onclick="size(12)">12</option>
+                <option onclick="size(16)">16</option>
+                <option onclick="size(20)">20</option>
+                <option onclick="size(24)">24</option>
+                <option onclick="size(28)">28</option>
+                <option onclick="size(32)">32</option>
+                <option onclick="size(36)">36</option>
+                <option onclick="size(40)">40</option>
+                <option onclick="size(44)">44</option>
+                <option onclick="size(48)">48</option>
+                <option onclick="size(52)">52</option>
+                <option onclick="size(56)">56</option>
+                <option onclick="size(58)">58</option>
+            </select>
+            <span class="icon-label">Text Color</span>
+            <input type="color" class="color-picker" oninput="colorchange(this.value)">
+            <span class="icon-label">Highlight</span>
+            <input type="color" class="color-picker" oninput="colorchangebg(this.value)">
+
+
+
+
+        </div>
+
+
+        <div id="Editor" contenteditable="true">
+
+        </div>
+    </div>
+    <h1 class="heading">Preview window</h1>
+    <div class="reflect">The Post will be updated here</div>
+
+    <button class="btn-l" onclick="print(event)">Preview Post</button>
+
+
+
+
+<script src="/Apps.js"></script>
+</body>
+
+</html>
